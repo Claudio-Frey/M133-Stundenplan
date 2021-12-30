@@ -35,3 +35,13 @@ $("#beruf").change(function (event) {
         });
     });
 })
+
+$.get("http://sandbox.gibm.ch/tafel.php?klasse_id=", function (data) {
+    console.log(data);
+    data.forEach(tafel => {
+        if (tafel.tafel_name == '') return;
+
+        $("#beruf")
+            .append('<option value="' + beruf.beruf_id + '">' + beruf.beruf_name + '</option>')
+    });
+});
